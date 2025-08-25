@@ -1,0 +1,7 @@
+/* Le footer doit rester en bas */
+app-footer {
+  background-color: #f8f9fa;
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
+}

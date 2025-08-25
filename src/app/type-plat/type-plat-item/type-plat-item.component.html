@@ -1,0 +1,9 @@
+<li class="list-group-item">
+  <div class="d-flex justify-content-between">
+    <p><strong>Nom :</strong> {{typePlat.nom}} | <strong>Calories par défaut :</strong> {{typePlat.calories_defaut}} kcal | <strong>ID :</strong> {{typePlat.id}} </p>
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-outline-dark" [routerLink]="['/type_plat/edit', typePlat.id]"> <i class="fa-solid fa-pen-to-square"></i> </a>
+      <a class="btn btn-outline-dark" (click)="onSupprime()"> <i class="fa-solid fa-trash"></i> </a>
+    </div>
+  </div>
+</li>

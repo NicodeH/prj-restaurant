@@ -1,0 +1,29 @@
+<div class="alert alert-dismissible"
+[ngClass]="{'alert-primary' : etatChargement==enumChargement.ERREUR,
+            'alert-secondary'    : etatChargement==enumChargement.ENCOURS,
+            'alert-success' : etatChargement==enumChargement.TERMINEE}"
+>
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <h4 class="alert-heading">{{etatChargement}}</h4>
+</div>
+
+<br>
+
+<button routerLink='/menu/new' type="button" class="btn btn-primary btn-lg">  <i class="fa-solid fa-plus"></i></button>
+
+<br><br>
+
+<div *ngIf="(menus | async) as listeMenus">
+  <h2> <b>{{listeMenus.length}}</b> Menus enregistrées</h2>
+
+  <ul class="list-group">
+
+    <app-menu
+        *ngFor="let menu of listeMenus"
+        [menu]="menu">
+    </app-menu>
+    <br>
+  </ul>
+</div>
+
+

@@ -1,0 +1,17 @@
+<br>
+<button routerLink='/type_plat/new' type="button" class="btn btn-primary btn-lg"><i class="fa-solid fa-plus"></i></button>
+
+<br><br>
+<div *ngIf="(typesPlats | async) as listeTypesPlats">
+  <h2> <b>{{listeTypesPlats.length}}</b> Types-plats enregistrées</h2>
+
+  <ul class="list-group">
+  <app-type-plat-item
+    *ngFor="let typePlat of listeTypesPlats"
+    [typePlat]="typePlat">
+  </app-type-plat-item>
+</ul>
+</div>
+<br>
+
+

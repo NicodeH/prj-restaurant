@@ -1,0 +1,39 @@
+<h2>{{plat.id ? "Modifier plat" : "Nouveau plat"}}</h2>
+
+<form #formulaire="ngForm" (ngSubmit)="onSubmit(formulaire)" >
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input ngModel [(ngModel)]="plat.id" type="number" name="id" id="id" class="form-control" disabled>
+  </div>
+
+  <div class="form-group">
+    <label for="idMenu">ID Menu</label>
+    <input ngModel [(ngModel)]="plat.menuId" type="number" name="idMenu" id="idMenu" class="form-control" disabled>
+  </div>
+
+  <div class="form-group">
+    <label for="nom">Nom</label>
+    <input ngModel [(ngModel)]="plat.nom" list="typesPlats" type="text" name="nom" id="nom" class="form-control" (change)="onTypePlatChange($event)" required maxlength="50" minlength="3"/>
+  </div>
+
+  <div class="form-group">
+    <label for="calories">Calories</label>
+    <input ngModel [(ngModel)]="plat.calories" type="number" name="calories" id="calories" class="form-control" required="">
+  </div>
+
+  <div class="d-flex btn-group mt-2">
+    <button class="btn btn-success" type="submit" [disabled]="!formulaire.valid">
+      {{plat.id ? 'Modifier' : 'Créer'}}
+    </button>
+    <a routerLink="/menus" class="btn btn-warning">
+      Annuler
+    </a>
+  </div>
+
+  <datalist id="typesPlats" *ngIf="(typesPlats | async) as listeTypesPlats">
+    <option value="{{typePlat.nom}}"
+        *ngFor="let typePlat of listeTypesPlats">
+    </option>
+  </datalist>
+</form>
+

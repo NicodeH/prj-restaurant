@@ -1,0 +1,4 @@
+{
+    "/menus/:menuId/plats": "/plats?menuId=:menuId",
+    "/menus/:menuId/plats/:platId": "/plats/:platId"
+}

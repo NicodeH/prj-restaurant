@@ -1,0 +1,9 @@
+<li class="list-group-item">
+  <div class="d-flex justify-content-between">
+    <p><strong>Nom :</strong> {{plat.nom}} | <strong>Calories :</strong> {{plat.calories}} | <strong>ID :</strong> {{plat.id}} | <strong>IDMenu :</strong> {{plat.menuId}}</p>
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-outline-dark" [routerLink]="['/menu', plat.menuId, 'plat', 'edit', plat.id]"> <i class="fa-solid fa-pen-to-square"></i> </a>
+      <a class="btn btn-outline-dark" (click)="onSupprime()"> <i class="fa-solid fa-trash"></i> </a>
+    </div>
+  </div>
+</li>

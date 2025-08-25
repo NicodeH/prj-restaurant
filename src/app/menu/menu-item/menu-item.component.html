@@ -1,0 +1,24 @@
+<div class="card text-white bg-primary mb-3" style="max-width: 50rem;max-height: 25rem;"
+[ngClass]="{'bg-success' : menu.statut==statutMenu.Actif,
+            'bg-secondary'    : menu.statut==statutMenu.Inactif,
+          }"
+>
+  <div class="card-header">
+    <h4><strong>Date de création : </strong> {{ menu.dateCreation | date:'yyyy-MM-dd' }} </h4>
+
+  </div>
+  <div class="card-body">
+    <span class="badge rounded-pill bg-primary">{{menu.statut}}</span>
+    <h4 class="card-title">{{menu.nom}}</h4>
+    <br>
+    <h5 class="card-title">Calories : {{this.calories}} kcal</h5>
+    <br>
+    <h5 class="card-title">Description :</h5>
+    <p class="card-text">{{menu.description}}</p>
+    <br>
+    <div class="d-flex justify-content-end">
+      <a class="btn" routerLink="/menu/edit/{{menu.id}}"> <i class="fa-solid fa-pen-to-square"></i> </a>
+      <a class="btn" (click)="onSupprime()"> <i class="fa-solid fa-trash"></i> </a>
+    </div>
+  </div>
+</div>

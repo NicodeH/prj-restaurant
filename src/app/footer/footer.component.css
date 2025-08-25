@@ -1,0 +1,15 @@
+/* Le footer doit rester en bas */
+footer {
+  background-color: #000; /* Fond noir */
+  color: #fff; /* Texte blanc */
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+footer .fa-burger {
+  margin-bottom: 0.5rem; /* Espace entre l'icône et le texte */
+}
